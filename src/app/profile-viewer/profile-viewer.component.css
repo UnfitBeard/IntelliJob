@@ -1,0 +1,230 @@
+/* General Styling */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Personal Info Section */
+.personal-info {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371); /* Pink-to-orange gradient */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.personal-info h2 {
+  color: white;
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  justify-self: left;
+}
+
+.personal-info p {
+  color: #fff;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Skills Section */
+.skills{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.skills p {
+  color: #fff;
+  font-size: 14px;
+  background-color: #2389da; /* Blue color */
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+/* Projects Section */
+.projects div {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.projects p {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.projects h2 {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}
+
+/* Stats Overview Section */
+.stats-top {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.stats-div {
+  background: linear-gradient(135deg, #285ad7, #ffc371); /* Pink-to-orange gradient */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  width: 22%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.stats-div .number p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stats-div .title p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Chart Section */
+h2 {
+  text-align: center;
+  color: #5f7cff; /* Pink color */
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+canvas {
+  margin: 0 auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .personal-info {
+    padding: 15px;
+  }
+
+  .personal-info h2 {
+    font-size: 22px;
+  }
+
+  .personal-info p {
+    font-size: 14px;
+  }
+
+  .stats-top {
+    flex-direction: column;
+  }
+
+  .stats-div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .personal-info {
+    padding: 10px;
+  }
+
+  .personal-info h2 {
+    font-size: 20px;
+  }
+
+  .personal-info p {
+    font-size: 12px;
+  }
+
+  .stats-div {
+    width: 100%;
+    padding: 10px;
+  }
+
+  canvas {
+    width: 100%;
+    height: auto;
+  }
+}
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure modal is on top of other content */
+}
+
+/* Modal Content */
+.modal-content {
+  background: linear-gradient(to right, #ff5f6d, #ffc371); /* Pink-to-Orange gradient */
+  padding: 30px;
+  border-radius: 15px;
+  width: 80%;  /* Set the width of the modal */
+  max-width: 500px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Close Button */
+.close {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* Schedule Button */
+.schedule-button {
+  background: linear-gradient(to right, #5558da, #2389da); /* Blue Gradient */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.schedule-button:hover {
+  background: linear-gradient(to right, #2389da, #5558da); /* Reversed Blue Gradient on Hover */
+}
+
+/* Form Styling */
+.form-group {
+  margin-bottom: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+}

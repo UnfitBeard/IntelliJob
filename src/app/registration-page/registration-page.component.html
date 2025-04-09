@@ -1,0 +1,24 @@
+<div class="registration-container">
+  <h2>Registration</h2>
+  <form action="" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+    <div class="username">
+      <label for="username">Username: </label>
+      <input type="text" name="username" id="username" formControlName="username">
+    </div>
+    <div class="email">
+      <label for="email">Email: </label>
+      <input type="email" name="email" id="email" formControlName="email">
+    </div>
+    <div class="password"><label for="password">Password: </label>
+      <input type="password" name="password" id="password" formControlName="password">
+    </div>
+
+    <div class="role-buttons">
+      <button (onclick)="onRoleSelected('recruiter')">Recruiter</button>
+      <button (onclick)="onRoleSelected('JobSeeker')">Job Seeker</button>
+    </div>
+    <button type="submit" [disabled]="!myForm.valid">
+      Submit
+    </button>
+  </form>
+</div>

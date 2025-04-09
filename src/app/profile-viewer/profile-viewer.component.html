@@ -1,0 +1,111 @@
+<!-- Profile Info Section -->
+<div class="personal-info">
+  <h2>Personal Info</h2>
+  <img src="brecht-corbeel-BvAwzPQRRis-unsplash.jpg" alt="avatar" width="50px" height="50px" style="border-radius: 50%;">
+  <p>Name: {{personalInfo[0].name}}</p>
+  <p>GitHub: {{personalInfo[0].github}}</p>
+  <p>Location: {{personalInfo[0].location}}</p>
+
+  <h2>Skills</h2>
+  <div class="skills">
+    <p id="skill" *ngFor="let item of skills">{{item}}</p>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="projects">
+    <div *ngFor="let item of projects">
+      <h2>{{item.title}}</h2>
+      <p>{{item.description}}</p>
+    </div>
+  </div>
+
+  <h2>Resume</h2>
+  <p>I am skilled in ..........................</p>
+
+  <h2>Applications Overview</h2>
+  <div class="stats-top">
+    <div id="posted-jobs" class="stats-div">
+      <div class="number">
+        <p>{{postedJobs.length}}</p>
+      </div>
+      <div class="title">
+        <p>Jobs Applied</p>
+      </div>
+    </div>
+    <div id="candidates-applied" class="stats-div">
+      <div class="number">
+        <p>{{candidatesApplied.length}}</p>
+      </div>
+      <div class="title">
+        <p>Applications Accepted</p>
+      </div>
+    </div>
+    <div id="offers-made" class="stats-div">
+      <div class="number">
+        <p>{{offersMade.length}}</p>
+      </div>
+      <div class="title">
+        <p>Offers Received</p>
+      </div>
+    </div>
+    <div id="offers-accepted" class="stats-div">
+      <div class="number">
+        <p>{{offersAccepted.length}}</p>
+      </div>
+      <div class="title">
+        <p>Offers Accepted</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Skill Growth</h2>
+<div style="display: block;">
+  <canvas baseChart width="400" height="400"
+    [type]="'line'"
+    [data]="lineChartData"
+    [options]="lineChartOptions"
+    [legend]="lineChartLegend">
+  </canvas>
+</div>
+
+<!-- Button to open Interview Scheduling Modal -->
+<button class="schedule-button" (click)="openModal()">Schedule Interview</button>
+
+<!-- Interview Scheduling Modal -->
+<div class="modal-overlay" *ngIf="isModalVisible">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Schedule Interview</h2>
+
+    <!-- Interview Schedule Form -->
+    <form (ngSubmit)="scheduleInterview()">
+      <div class="form-group">
+        <label for="candidateName">Candidate Name:</label>
+        <input type="text" id="candidateName" [(ngModel)]="interviewDetails.candidateName" name="candidateName" required />
+      </div>
+
+      <div class="form-group">
+        <label for="interviewDate">Interview Date:</label>
+        <input type="date" id="interviewDate" [(ngModel)]="interviewDetails.interviewDate" name="interviewDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="interviewTime">Interview Time:</label>
+        <input type="time" id="interviewTime" [(ngModel)]="interviewDetails.interviewTime" name="interviewTime" required />
+      </div>
+
+      <div class="form-group">
+        <label for="interviewType">Interview Type:</label>
+        <select id="interviewType" [(ngModel)]="interviewDetails.interviewType" name="interviewType" required>
+          <option value="In-person">In-person</option>
+          <option value="Online">Online</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button type="submit">Schedule Interview</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+/* Common Styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #555;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+/* Content Top Section */
+.content-top {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* Intro Message */
+.intro-message {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #fff;
+}
+
+.intro-message h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.intro-message p {
+  font-size: 16px;
+}
+
+/* Recommended Section */
+.recommended {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.recommended h3 {
+  font-size: 22px;
+  color: #333;
+}
+
+.recommended p {
+  font-size: 16px;
+  color: #555;
+}
+
+.complete-profile {
+  background: #f1f1f1;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Notifications Section */
+.notifications {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.notifications h2 {
+  font-size: 22px;
+  color: #333;
+}
+
+.notification {
+  margin-top: 15px;
+}
+
+.notification p {
+  font-size: 14px;
+  color: #555;
+}
+
+.notification p:first-child {
+  font-weight: bold;
+}
+
+/* Jobs Section */
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.job {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.job:hover {
+  transform: translateY(-10px);
+}
+
+.job p {
+  margin: 0;
+  color: #333;
+}
+
+.job button {
+  background: linear-gradient(135deg, #5558da, #2389da);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.job button:hover {
+  background: linear-gradient(135deg, #2389da, #5558da);
+}

@@ -1,0 +1,173 @@
+/* Main Intro Section Styling */
+.intro-section {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+button {
+  margin: 10px;
+  width: fit-content;
+  align-self: center;
+}
+
+input textarea {
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.intro-section h1 {
+  margin-bottom: 10px;
+}
+
+.intro-section p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Form Input Styling */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+  padding: 30px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Skills, Projects, Courses Sections */
+form div[formGroupName="skills"],
+form div[formGroupName="projects"],
+form div[formGroupName="courses"] {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+button {
+  background-color: #5558da;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #2389da;
+  transform: translateY(-2px);
+}
+
+/* Add/Remove Buttons in Skills, Projects, Courses */
+button[type="button"] {
+  background-color: #ff5f6d;
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+button[type="button"]:hover {
+  background-color: #ffc371;
+  transform: translateY(-2px);
+}
+
+/* Submit Button */
+button[type="submit"] {
+  background-color: #5558da;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:hover {
+  background-color: #2389da;
+  transform: translateY(-2px);
+}
+
+/* Hover Effects on Skill/Project Rows */
+form .skills .form-group,
+form .projects .form-group,
+form .courses .form-group {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form .skills .form-group:hover,
+form .projects .form-group:hover,
+form .courses .form-group:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Color-Coding Sections */
+.skills {
+  background-color: #f9e7f1;
+}
+
+.projects {
+  background-color: #e0f1fa;
+}
+
+.courses {
+  background-color: #f1f8e4;
+}
+
+/* Skills Match Percentage in Pink */
+.skills-match-percentage {
+  color: #ff5f6d;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}

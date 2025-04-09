@@ -1,0 +1,101 @@
+<div class="intro-section">
+  <h1>Personal Information</h1>
+  <p>Fill in your personal details below.</p>
+</div>
+<form [formGroup]="personalDetailsForm" (ngSubmit)="onSubmit()">
+
+  <!-- Personal Info Fields -->
+  <div>
+    <label for="firstName">First Name</label>
+    <input id="firstName" formControlName="firstName" type="text" />
+  </div>
+
+  <div>
+    <label for="lastName">Last Name</label>
+    <input id="lastName" formControlName="lastName" type="text" />
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+
+  <!-- Address -->
+  <div formGroupName="address">
+    <div>
+      <label for="location">Location</label>
+      <input id="location" formControlName="location" type="text" />
+    </div>
+    <div>
+      <label for="postalAddress">Postal Address</label>
+      <input id="postalAddress" formControlName="postalAddress" type="text" />
+    </div>
+  </div>
+
+  <div>
+    <label for="telephone">Telephone</label>
+    <input id="telephone" formControlName="telephone" type="text" />
+  </div>
+
+  <!-- Skills Section -->
+  <div class="skills" formArrayName="skills">
+    <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i" class="form-group">
+      <div>
+        <label for="skill">Skill</label>
+        <input id="skill" formControlName="skill" type="text" />
+      </div>
+      <div>
+        <label for="experience">Experience</label>
+        <input id="experience" formControlName="experience" type="text" />
+      </div>
+      <button type="button" (click)="removeSkill(i)">Remove</button>
+    </div>
+    <button type="button" (click)="addSkill()">Add Skill</button>
+  </div>
+
+
+  <!-- Projects Section -->
+  <div class="projects" formArrayName="projects">
+    <div *ngFor="let project of projects.controls; let j = index" [formGroupName]="j" class="form-group">
+      <div>
+        <label for="projectName">Project Name</label>
+        <input id="projectName" formControlName="projectName" type="text" />
+      </div>
+      <div>
+        <label for="projectDescription">Description</label>
+        <textarea id="projectDescription" formControlName="projectDescription"></textarea>
+      </div>
+      <div>
+        <label for="projectLink">Link</label>
+        <input id="projectLink" formControlName="projectLink" type="url" />
+      </div>
+      <button type="button" (click)="removeProject(j)">Remove Project</button>
+    </div>
+    <button type="button" (click)="addProject()">Add Project</button>
+  </div>
+
+
+  <!-- Courses Section -->
+  <div class="courses" formArrayName="courses">
+    <div *ngFor="let course of courses.controls; let k = index" [formGroupName]="k" class="form-group">
+      <div>
+        <label for="courseName">Course Name</label>
+        <input id="courseName" formControlName="courseName" type="text" />
+      </div>
+      <div>
+        <label for="courseDescription">Description</label>
+        <textarea id="courseDescription" formControlName="courseDescription"></textarea>
+      </div>
+      <div>
+        <label for="courseDate">Date Obtained</label>
+        <input id="courseDate" formControlName="courseDate" type="date" />
+      </div>
+      <button type="button" (click)="removeCourse(k)">Remove Course</button>
+    </div>
+    <button type="button" (click)="addCourse()">Add Course</button>
+  </div>
+
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="personalDetailsForm.invalid">Submit</button>
+</form>

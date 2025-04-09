@@ -1,0 +1,68 @@
+<div class="main">
+  <div class="container">
+    <div class="filters-and-jobs">
+      <!-- Filters Section (Left) -->
+      <div class="filters">
+        <h1>Job Search</h1>
+        <form [formGroup]="jobSearchForm" (ngSubmit)="onSearch()">
+
+          <!-- Salary Range -->
+          <div class="form-group">
+            <label for="salaryRange">Salary Range ($)</label>
+            <input type="range" id="salaryRange" formControlName="salaryRange" min="0" max="200000" step="5000"
+              class="form-control-range">
+            <p>Salary: ${{ jobSearchForm.get('salaryRange')?.value }}</p>
+          </div>
+
+          <!-- Experience Level -->
+          <div class="form-group">
+            <label for="experience">Experience Level</label>
+            <select id="experience" formControlName="experience" class="form-control">
+              <option *ngFor="let level of experienceLevels" [value]="level">{{ level }}</option>
+            </select>
+          </div>
+
+          <!-- Location -->
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" formControlName="location" class="form-control" placeholder="Enter location">
+          </div>
+
+          <!-- Job Type -->
+          <div class="form-group">
+            <label for="jobType">Job Type</label>
+            <select id="jobType" formControlName="jobType" class="form-control">
+              <option *ngFor="let type of jobTypes" [value]="type">{{ type }}</option>
+            </select>
+          </div>
+
+          <button type="submit" [disabled]="jobSearchForm.invalid" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+
+      <!-- Jobs Section (Right) -->
+      <div class="jobs">
+        <p>Ask AI</p>
+        <div class="ai-search">
+          <input type="text" id="ai" placeholder="Which jobs fit my skillset"><span>Ask</span>
+        </div>
+        <div class="recommended-items">
+          <div class="job" *ngFor="let item of jobs">
+            <p>{{item.name}}</p>
+            <p>{{item.company}}</p>
+            <p>{{item.skillsMatch}}%</p>
+            <button id="apply">Apply</button>
+          </div>
+        </div>
+        <div class="job-items">
+          <div class="job" *ngFor="let item of jobs">
+            <p>{{item.name}}</p>
+            <p>{{item.company}}</p>
+            <p>{{item.skillsMatch}}%</p>
+            <button id="apply">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

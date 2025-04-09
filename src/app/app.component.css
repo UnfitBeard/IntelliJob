@@ -1,0 +1,175 @@
+/* SkillMatch AI Navbar and Footer Styling */
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Toolbar / Navigation */
+.pink-toolbar {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: white;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 64px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+  padding: 10px 0;
+  color: white;
+  letter-spacing: 0.5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.pink-toolbar button[mat-button] {
+  margin: 0 2px;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s;
+  padding: 0 16px;
+}
+
+.pink-toolbar button[mat-button]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.router-link-active {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  border-bottom: 3px solid white;
+}
+
+/* Responsive Navbar */
+@media (max-width: 1000px) {
+  .pink-toolbar {
+    padding: 10px 16px;
+    justify-content: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .pink-toolbar button[mat-button] {
+    padding: 0 10px;
+    margin: 5px 2px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pink-toolbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .pink-toolbar button[mat-button] {
+    width: 100%;
+    margin: 2px 0;
+    padding: 8px 0;
+  }
+}
+
+/* Main Content */
+router-outlet {
+  flex: 1;
+}
+
+/* Footer */
+.blue-footer {
+  background: linear-gradient(135deg, #5558da, #2389da);
+  color: white;
+  padding: 20px;
+  margin-bottom: 0px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-links button[mat-button] {
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.footer-links button[mat-button]:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+    justify-content: center;
+  }
+}
+
+/* Main Content Area - to ensure proper spacing */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Add this class to your router-outlet container if needed */
+.content-container {
+  min-height: calc(100vh - 64px - 80px); /* Adjust based on toolbar and footer heights */
+  padding: 20px 0;
+}
+

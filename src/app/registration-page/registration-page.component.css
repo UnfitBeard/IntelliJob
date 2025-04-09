@@ -1,0 +1,156 @@
+/* SkillMatch AI Registration Form Styling */
+.registration-container {
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.registration-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #ff5f6d;
+  font-weight: 500;
+}
+
+.username, .email, .password {
+  margin-bottom: 20px;
+}
+
+.registration-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.registration-container input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.registration-container input:focus {
+  outline: none;
+  border-color: #ff5f6d;
+  box-shadow: 0 0 0 2px rgba(255, 95, 109, 0.2);
+}
+
+.role-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.role-buttons button {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #555;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.role-buttons button:first-child {
+  border-radius: 4px 0 0 4px;
+  margin-right: 5px;
+}
+
+.role-buttons button:last-child {
+  border-radius: 0 4px 4px 0;
+  margin-left: 5px;
+}
+
+.role-buttons button:hover {
+  background-color: rgba(255, 95, 109, 0.1);
+  border-color: #ff5f6d;
+  color: #ff5f6d;
+}
+
+.role-buttons button.selected {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: white;
+  border-color: transparent;
+}
+
+.registration-container button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.registration-container button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 95, 109, 0.3);
+}
+
+.registration-container button[type="submit"]:disabled {
+  background: linear-gradient(135deg, #cccccc, #dddddd);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.registration-container a {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #5558da;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.registration-container a:hover {
+  color: #2389da;
+  text-decoration: underline;
+}
+
+/* Error message styling */
+.input-error {
+  color: #ff5f6d;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .registration-container {
+    padding: 20px;
+    margin: 20px 15px;
+  }
+
+  .role-buttons {
+    flex-direction: column;
+  }
+
+  .role-buttons button {
+    width: 100%;
+    margin: 5px 0;
+    border-radius: 4px;
+  }
+
+  .role-buttons button:first-child {
+    margin-right: 0;
+  }
+
+  .role-buttons button:last-child {
+    margin-left: 0;
+  }
+}

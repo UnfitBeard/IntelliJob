@@ -1,0 +1,66 @@
+<div class="stats-top">
+  <div id="posted-jobs" class="stats-div">
+    <div class="number">
+      <p>{{postedJobs.length}}</p>
+    </div>
+    <div class="title">
+      <p>Posted Jobs</p>
+    </div>
+  </div>
+  <div id="candidates-applied" class="stats-div">
+    <div class="number">
+      <p>{{candidatesApplied.length}}</p>
+    </div>
+    <div class="title">
+      <p>Candidates Applied</p>
+    </div>
+  </div>
+  <div id="offers-made" class="stats-div">
+    <div class="number">
+      <p>{{offersMade.length}}</p>
+    </div>
+    <div class="title">
+      <p>Offers Made</p>
+    </div>
+  </div>
+  <div id="offers-accepted" class="stats-div">
+    <div class="number">
+      <p>{{offersAccepted.length}}</p>
+    </div>
+    <div class="title">
+      <p>Offers Accepted</p>
+    </div>
+  </div>
+</div>
+
+<div class="personal-info">
+  <div class="image">
+    <img src="" alt="person-avatar">
+  </div>
+  <div class="info">
+    <p *ngFor="let item of personalInfo">
+      {{item.name}}
+    </p>
+  </div>
+</div>
+
+<h2>Posted Jobs</h2>
+<div class="your-posted-jobs">
+  <div class="posted-job" *ngFor="let item of yourPostedJobs">
+    <p>{{item.title}}</p>
+    <p>{{item.description}}</p>
+    <button id="view-candidates">View Candidate</button>
+  </div>
+</div>
+
+<table class="applications">
+  <h2>Applications</h2>
+  <tr>
+    <th>Name</th>
+    <th>Job</th>
+  </tr>
+  <tr *ngFor="let item of yourPostedJobs">
+    <td>{{item.applicants[0].name}}</td>
+    <td>{{item.title}}</td>
+  </tr>
+</table>

@@ -1,0 +1,91 @@
+/* Common Styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: #fff;
+  font-size: 28px;  /* Smaller font size for better fit */
+  margin: 10px 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+p {
+  color: #fff;
+  font-size: 16px;  /* Smaller font size */
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* Container Style */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #ff5f6d, #ffc371); /* Pink to Orange gradient */
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin: 30px 0;  /* Reduced margin */
+  max-width: 1200px;
+  width: 100%;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.intro-p {
+  flex: 1;
+  padding: 10px;
+}
+
+.img-intro {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-intro img {
+  max-width: 80%;  /* Reduced size to make the image smaller */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;  /* Reduced padding */
+  }
+
+  .intro-p, .img-intro {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 24px;  /* Slightly smaller font for medium screens */
+  }
+
+  p {
+    font-size: 14px;  /* Adjust paragraph size */
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 20px;  /* Smaller font for mobile */
+  }
+
+  p {
+    font-size: 12px;  /* Smaller text for mobile */
+  }
+
+  .img-intro img {
+    max-width: 100%;  /* Ensure image is fully responsive on mobile */
+  }
+}

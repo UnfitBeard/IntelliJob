@@ -1,0 +1,86 @@
+<div class="container">
+  <h1>Create Job</h1>
+  <form [formGroup]="jobForm" (ngSubmit)="onSubmit()">
+
+    <!-- Job Title -->
+    <div class="form-group">
+      <label for="jobTitle">Job Title</label>
+      <input type="text" id="jobTitle" formControlName="jobTitle" class="form-control" />
+      <div *ngIf="jobForm.get('jobTitle')?.touched && jobForm.get('jobTitle')?.invalid" class="error">
+        Job Title is required.
+      </div>
+    </div>
+
+    <!-- Job Description -->
+    <div class="form-group">
+      <label for="description">Job Description</label>
+      <textarea id="description" formControlName="description" class="form-control"></textarea>
+      <div *ngIf="jobForm.get('description')?.touched && jobForm.get('description')?.invalid" class="error">
+        Job Description is required.
+      </div>
+    </div>
+
+    <!-- Salary -->
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input type="number" id="salary" formControlName="salary" class="form-control" />
+      <div *ngIf="jobForm.get('salary')?.touched && jobForm.get('salary')?.invalid" class="error">
+        Salary is required and must be a number.
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="form-group">
+      <label for="location">Location</label>
+      <input type="text" id="location" formControlName="location" class="form-control" />
+      <div *ngIf="jobForm.get('location')?.touched && jobForm.get('location')?.invalid" class="error">
+        Location is required.
+      </div>
+    </div>
+
+    <!-- Date Posted -->
+    <div class="form-group">
+      <label for="datePosted">Date Posted</label>
+      <input type="date" id="datePosted" formControlName="datePosted" class="form-control" />
+      <div *ngIf="jobForm.get('datePosted')?.touched && jobForm.get('datePosted')?.invalid" class="error">
+        Date Posted is required.
+      </div>
+    </div>
+
+    <!-- Experience Level -->
+    <div class="form-group">
+      <label for="experienceLevel">Experience Level</label>
+      <select id="experienceLevel" formControlName="experienceLevel" class="form-control">
+        <option value="junior">Junior</option>
+        <option value="mid">Mid</option>
+        <option value="senior">Senior</option>
+      </select>
+      <div *ngIf="jobForm.get('experienceLevel')?.touched && jobForm.get('experienceLevel')?.invalid" class="error">
+        Experience Level is required.
+      </div>
+    </div>
+
+    <!-- Job Type -->
+    <div class="form-group">
+      <label for="jobType">Job Type</label>
+      <select id="jobType" formControlName="jobType" class="form-control">
+        <option value="full-time">Full-time</option>
+        <option value="part-time">Part-time</option>
+        <option value="freelance">Freelance</option>
+      </select>
+      <div *ngIf="jobForm.get('jobType')?.touched && jobForm.get('jobType')?.invalid" class="error">
+        Job Type is required.
+      </div>
+    </div>
+
+    <!-- Salary Range (Slider) -->
+    <div class="form-group">
+      <label for="salaryRange">Salary Range ($)</label>
+      <input type="range" id="salaryRange" formControlName="salaryRange" min="30000" max="200000" step="1000" class="form-control-range" />
+      <p>Salary: ${{ jobForm.get('salaryRange')?.value }}</p>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" [disabled]="jobForm.invalid" class="btn btn-primary">Submit</button>
+  </form>
+</div>

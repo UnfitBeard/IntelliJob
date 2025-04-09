@@ -1,0 +1,91 @@
+/* Common Styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  color: #555;
+}
+
+h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Form Styles */
+.job-application-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="file"], textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  background-color: #f9f9f9;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* Submit Button Styles */
+.btn-submit {
+  background: linear-gradient(135deg, #5558da, #2389da);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  font-size: 16px;
+}
+
+.btn-submit:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, #2389da, #5558da);
+}
+
+/* Responsive Layout */
+@media (max-width: 1024px) {
+  .job-application-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .job-application-form {
+    width: 100%;
+    padding: 15px;
+  }
+}

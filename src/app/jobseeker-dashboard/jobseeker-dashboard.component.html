@@ -1,0 +1,33 @@
+<div class="content-top">
+  <div class="intro-message">
+    <h2>Finding the jobs that suits you</h2>
+    <p>We are dedicated to help you find a job that can help improve your skills</p>
+  </div>
+
+  <div class="recommended">
+    <h3>Recommended for you</h3>
+    <p *ngFor="let item of recommended">
+      {{item.name}}
+    </p>
+    <div class="complete-profile">
+      <p>Complete your profile for better recommendations</p>
+    </div>
+  </div>
+
+  <div class="notifications">
+    <h2>Notifications</h2>
+    <div class="notification" *ngFor="let item of notifications">
+      <p>{{item.name}}</p>
+      <p>{{item.from}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="jobs">
+  <div class="job" *ngFor="let item of jobs">
+    <p>{{item.name}}</p>
+    <p>{{item.company}}</p>
+    <p>{{item.skillsMatch}}%</p>
+    <button id="apply">Apply</button>
+  </div>
+</div>

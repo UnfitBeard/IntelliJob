@@ -1,0 +1,196 @@
+/* Updated CSS with enhanced styling and new components */
+.site-analytics, .charts, .recent-activity {
+  margin: 20px;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.site-analytics:hover, .charts:hover, .recent-activity:hover {
+  transform: translateY(-3px);
+}
+
+/* Header Section */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #5558da, #2389da);
+  border-radius: 12px;
+  color: white;
+}
+
+.header-title h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.header-title p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Enhanced Stats Section */
+.stats-top {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.stats-div {
+  padding: 25px;
+  background: linear-gradient(135deg, var(--start), var(--end));
+  border-radius: 12px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-div::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(45deg);
+}
+
+.stats-div:nth-child(1) { --start: #ff5f6d; --end: #ffc371; }
+.stats-div:nth-child(2) { --start: #5558da; --end: #2389da; }
+.stats-div:nth-child(3) { --start: #6a11cb; --end: #2575fc; }
+.stats-div:nth-child(4) { --start: #00c6fb; --end: #005bea; }
+
+.stats-div .number p {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.stats-div .title p {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Enhanced Chart Section */
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+/* New Components */
+/* Progress Bars */
+.progress-section {
+  margin: 20px;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+}
+
+.progress-item {
+  margin: 15px 0;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+  transition: width 0.8s ease;
+}
+
+/* Recent Activity Feed */
+.activity-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  margin: 10px 0;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.activity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2389da;
+  margin-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Enhanced Table Styling */
+.data-table {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.data-table th {
+  background: linear-gradient(135deg, #5558da, #2389da);
+}
+
+.data-table tr:nth-child(even) td {
+  background: #f8f9fa;
+}
+
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  background: rgba(85, 88, 218, 0.1);
+  color: #5558da;
+}
+
+/* New Doughnut Chart Container */
+.doughnut-chart {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-div .number p {
+    font-size: 24px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}

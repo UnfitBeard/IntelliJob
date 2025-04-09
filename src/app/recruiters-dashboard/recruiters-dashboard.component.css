@@ -1,0 +1,133 @@
+/* Common Styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Stats Section */
+.stats-top {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.stats-div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.stats-div .number p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.stats-div .title p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Specific Color Gradients */
+#posted-jobs {
+  background: linear-gradient(135deg, #ff5f6d, #ffc371);
+}
+
+#candidates-applied {
+  background: #f3f6ff;
+}
+
+#offers-made {
+  background: linear-gradient(135deg, #5558da, #2389da);
+}
+
+#offers-accepted {
+  background: #e1f5fe;
+}
+
+/* Personal Info Section */
+.personal-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.personal-info .image img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.personal-info .info p {
+  font-size: 16px;
+  color: #333;
+}
+
+/* Job Cards Section */
+.your-posted-jobs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.posted-job {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.posted-job:hover {
+  transform: translateY(-10px);
+}
+
+.posted-job p {
+  margin: 0;
+  color: #333;
+}
+
+button {
+  background: linear-gradient(135deg, #5558da, #2389da);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2389da, #5558da);
+}
+
+/* Applications Table */
+table.applications {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table.applications th, table.applications td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table.applications th {
+  background-color: #f1f1f1;
+  color: #333;
+}
