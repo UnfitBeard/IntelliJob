@@ -13,4 +13,4 @@ sudo service docker start
 
 ## create container
 
-sudo docker run -d  -p 80:80 ndambuki/backendusers
+sudo docker run -d  -p 80:80 sth:sth/backendusers
